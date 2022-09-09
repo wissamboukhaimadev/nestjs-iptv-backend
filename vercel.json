@@ -1,8 +1,6 @@
 {
   "version": 2,
-  "env": {
-    "DATABASE_URL": "@database_connection"
-  },
+
   "builds": [
     {
       "src": "src/main.ts",
