@@ -1,0 +1,30 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model UsersWantToPay {
+  id            Int      @id @default(autoincrement())
+  phoneNumber   String
+  name          String
+  payed         Boolean  @default(false)
+  email         String
+  dateWantToPay DateTime @default(now())
+}
+
+model UsersPayed {
+  id                   Int      @id @default(autoincrement())
+  email                String
+  name                 String
+  phoneNumber          String
+  subscriptionDuration String
+  subscriptionPrice    Float
+  datePyed             DateTime @default(now())
+}
